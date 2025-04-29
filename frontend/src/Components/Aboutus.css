@@ -1,0 +1,115 @@
+.about-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom right, #f0f4ff, #e6ecff);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .main-info {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .main-info h2 {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+  }
+  
+  .main-info p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+  
+  .divider {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    margin: 3rem auto;
+    width: 80%;
+  }
+  
+  .team-section {
+    text-align: center;
+  }
+  
+  .team-section h2 {
+    font-size: 2.2rem;
+    color: #1e3a8a;
+    margin-bottom: 2rem;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 260px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .student-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #111827;
+  }
+  
+  .roll-no {
+    font-size: 0.95rem;
+    color: #6b7280;
+  }
+  
+  .linkedin-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .linkedin-link:hover {
+    color: #1e40af;
+  }
+  
+  .footer {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e3a8a;
+    color: #f0f4ff;
+    font-size: 0.95rem;
+  }
+  

@@ -1,0 +1,113 @@
+/* General Styles */
+.about-container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e0f7fa, #80deea);
+    padding: 4rem 2rem;
+  }
+  
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 3rem;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 2rem;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 1rem;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .step-list,
+  .features-list,
+  .api-list {
+    list-style-position: inside;
+    padding-left: 1.5rem;
+    color: #4b5563;
+  }
+  
+  .step-list li,
+  .features-list li,
+  .api-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .tech-item {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tech-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tech-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+  
+  .tech-description {
+    font-size: 1rem;
+    color: #4b5563;
+  }
+  
+  .api-code {
+    background-color: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: #1f2937;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      padding: 2rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -1,0 +1,32 @@
+/* frontend/src/static/main.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+  }
+  
+  .navbar {
+    background: #222;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-title img {
+    height: 50px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: 500;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: #00adb5;
+  }
+  
