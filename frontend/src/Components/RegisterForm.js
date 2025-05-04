@@ -79,7 +79,11 @@ function RegisterForm() {
           onChange={handleChange}
           required
         />
-
+        <p className="text-danger mx-4" style={{ fontSize: '14px' }}>
+        Password must be minimum 6 characters <br></br>
+        Password must contain at least one lowercase letter, one uppercase letter, and one symbol (!, @, or $)
+       </p>
+       
         <input
           className="form-control mb-2 mx-4"
           style={{ ...inputStyle }}

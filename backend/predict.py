@@ -1,5 +1,3 @@
-# backend/predict.py
-
 import os
 import datetime
 from flask import Blueprint, request, jsonify, current_app
@@ -8,6 +6,7 @@ from database import actions_collection
 from inference import predict_image
 from gradcam import generate_gradcam
 from utils.mailer import send_output_email
+from auth import token_required  # Import the token_required decorator
 
 predict_bp = Blueprint('predict', __name__)
 
@@ -63,11 +62,12 @@ def predict():
         "output_image_url": output_path
     }), 200
 
-
+# Updated previous-actions route with token validation
 @predict_bp.route('/previous-actions', methods=['GET'])
-def previous_actions():
-    email = request.args.get('email')
-    actions = actions_collection.find({"user_email": email})
+@token_required  # Use the token_required decorator for this route
+def previous_actions(current_user):  # current_user is the email extracted from the token
+    # Use the current_user to filter actions by email
+    actions = actions_collection.find({"user_email": current_user})
     response = []
 
     for action in actions:

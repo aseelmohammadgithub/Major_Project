@@ -4,6 +4,7 @@ import saif from '../static/Personal/saif.jpg';
 import vamshi from '../static/Personal/vamshi.jpg';
 import venkatesh from '../static/Personal/venkatesh.jpg';
 import aseel from '../static/Personal/aseel.jpg';
+import vishwanath from '../static/Personal/vishwanath.jpg';
 import './Aboutus.css';
 function AboutPage() {
   const team = [
@@ -30,6 +31,12 @@ function AboutPage() {
       name: 'Thoguta Venkatesh',
       roll: '21BD1A12C3',
       link: 'https://www.linkedin.com/in/venkatesh-thoguta-b30345215',
+    },
+    {
+      img: vishwanath,
+      name: 'CH N.V. Vishwanatha Sai',
+      roll: '21BD1A1278',
+      link: 'https://www.linkedin.com/in/vishwanatha-sai-4ba745362/',
     },
   ];
   return (

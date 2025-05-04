@@ -26,6 +26,29 @@
 
 // frontend/src/App.js
 
+// import React from 'react';
+// import { Routes, Route } from 'react-router-dom';
+// import HomePage from './pages/HomePage';
+// import DashboardPage from './pages/DashboardPage';
+// import LoginForm from './Components/LoginForm';
+// import PreviousActions from './Components/PreviousActions';
+// import Aboutus from './Components/Aboutus';
+// import AboutAlgorithm from './Components/AboutAlgorithm';
+// function App() {
+//   return (
+//     <Routes>
+//       <Route path="/" element={<HomePage />} />
+//       <Route path="/dashboard" element={<DashboardPage />} />
+//       <Route path="/login" element={<LoginForm />} />
+//       <Route path='/previous-actions' element={<PreviousActions/>}/>
+//       <Route path='/about-us' element={<Aboutus/>}/>
+//       <Route path='/about-algorithm' element={<AboutAlgorithm/>}/>
+//     </Routes>
+//   );
+// }
+
+// export default App;
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -34,15 +57,25 @@ import LoginForm from './Components/LoginForm';
 import PreviousActions from './Components/PreviousActions';
 import Aboutus from './Components/Aboutus';
 import AboutAlgorithm from './Components/AboutAlgorithm';
+import ProtectedRoute from './Components/ProtectedRoute';  // Import the ProtectedRoute
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/login" element={<LoginForm />} />
-      <Route path='/previous-actions' element={<PreviousActions/>}/>
-      <Route path='/about-us' element={<Aboutus/>}/>
-      <Route path='/about-algorithm' element={<AboutAlgorithm/>}/>
+      <Route path="/dashboard" element={
+        <ProtectedRoute>
+          <DashboardPage />
+        </ProtectedRoute>
+      } />
+      <Route path="/previous-actions" element={
+        <ProtectedRoute>
+          <PreviousActions />
+        </ProtectedRoute>
+      } />
+      <Route path='/about-us' element={<Aboutus />} />
+      <Route path='/about-algorithm' element={<AboutAlgorithm />} />
     </Routes>
   );
 }

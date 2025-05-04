@@ -16,5 +16,5 @@ export const uploadCTScan = async (formData) => {
     headers: { Authorization: `Bearer ${token}` }
   });
 
-  return res.data; // ✅ very important to return res.data here
+  return res.data; // 
 };

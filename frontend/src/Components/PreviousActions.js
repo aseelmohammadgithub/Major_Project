@@ -1,12 +1,35 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchPreviousActions } from '../services/historyService';
 
 function PreviousActions() {
   const [actions, setActions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetchPreviousActions().then(data => setActions(data));
-  }, []);
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // Token is not found, redirect to login
+      navigate('/login');
+      return;
+    }
+
+    const getData = async () => {
+      try {
+        const data = await fetchPreviousActions();
+        setActions(data);
+      } catch (err) {
+        console.error('Failed to fetch previous actions:', err);
+        // Redirect to login if fetching fails or token is invalid
+        navigate('/login');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getData();
+  }, [navigate]);
 
   const downloadAll = () => {
     const headers = ['Date', 'Doctor Name', 'Hospital Name', 'Input Image URL', 'Output Image URL'];
@@ -47,6 +70,10 @@ function PreviousActions() {
       })
       .catch(err => console.error('Download error:', err));
   };
+
+  if (loading) {
+    return <div>Loading...</div>; // Loading screen while fetching data
+  }
 
   return (
     <div className="container my-5 d-flex justify-content-center">
